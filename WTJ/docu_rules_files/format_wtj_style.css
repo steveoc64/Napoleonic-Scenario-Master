@@ -1,0 +1,8 @@
+
+BODY {font-family: Arial;}
+
+A 	{color: 0000FF; text-decoration: none;}
+
+A:visited	{color: #424280; text-decoration: none; }
+
+A:hover {color: 000000; text-decoration: underline;}
