@@ -20,6 +20,7 @@
 	$lang['list_loading'] 			= 'Loading...';	
 
 	$lang['form_edit'] 				= 'Edit';
+	$lang['form_view'] 				= 'View';
 	$lang['form_back_to_list'] 		= 'Back to list';
 	$lang['form_update_changes'] 	= 'Update changes';
 	$lang['form_cancel'] 			= 'Cancel';	
@@ -41,8 +42,8 @@
 	$lang['delete_error_message'] 	= 'Your data was not deleted from the database.';
 	
 	/* Javascript messages */
-	$lang['alert_add_form']			= 'The data you had insert may not be saved.\\nAre you sure you want to go back to list?';
-	$lang['alert_edit_form']		= 'The data you had change may not be saved.\\nAre you sure you want to go back to list?';
+	$lang['alert_add_form']			= 'The data you had inserted may not be saved.\\nAre you sure you want to go back to list?';
+	$lang['alert_edit_form']		= 'The data you had changed may not be saved.\\nAre you sure you want to go back to list?';
 	$lang['alert_delete']			= 'Are you sure that you want to delete this record?';
 	
 	$lang['insert_error']			= 'An error has been occured at the insert.';

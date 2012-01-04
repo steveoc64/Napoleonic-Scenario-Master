@@ -32,7 +32,6 @@ body {
 	top: 0px;
 	left: 0px;
 	width: 200px;
-	// height: 400px;
 	background: #000011 repeat-x 0 0;
 	border: 0px solid black;
 	margin: 0px auto 0;
@@ -60,7 +59,7 @@ h1,h2,h3,h4,h5 {
 	text-align: center;
 }
 
-input[type=#form.text], input[type=password] {
+input[type=form.text], input[type=password] {
 	display: block;
 	margin: 0 0 1em 0;
 	width: 280px;
