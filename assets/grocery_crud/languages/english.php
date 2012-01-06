@@ -13,6 +13,7 @@
 	$lang['list_clear_filtering'] 	= 'Clear filtering';
 	$lang['list_delete'] 			= 'Delete';
 	$lang['list_edit'] 				= 'Edit';	
+	$lang['list_view'] 				= 'View';	
 	$lang['list_paging_first'] 		= 'First';
 	$lang['list_paging_previous'] 	= 'Previous';
 	$lang['list_paging_next'] 		= 'Next';
