@@ -29,9 +29,9 @@ body {
 
 #menu {
 	position:absolute;
-	top: 0px;
+	top: 115px;
 	left: 0px;
-	width: 200px;
+	width: 150px;
 	background: #000011 repeat-x 0 0;
 	border: 0px solid black;
 	margin: 0px auto 0;
@@ -39,9 +39,9 @@ body {
 	-moz-border-radius: 3px;
 }
 #main {
-	position:relative;
+	position:absolute;
 	top: 140px;
-	left: 50px;
+	left: 180px;
 	width: 1024px;
 	background: #888 repeat-x 0 0;
 	opacity:0.9;
@@ -125,7 +125,7 @@ h1,h2,h3,h4 {
 
 /* Generated via www.cssmenubuilder.com */
 
-.vmenu{margin:0; padding:0; width:200px; list-style:none;background:rgb(255,255,255);}
+.vmenu{margin:0; padding:0; width:150px; list-style:none;background:rgb(255,255,255);}
 .vmenu li{padding:0; margin:0 0 1px 0; height:40px; display:block; }
 .vmenu li a{text-align:left;height:40px; padding:0px 25px; font:16px Verdana, Arial, Helvetica, sans-serif; color:rgb(255,255,255); display:block; background:url('verMenuImages-arrow.png') 0px 0px no-repeat; text-decoration:none;}
 .vmenu li a:hover{background:url('verMenuImages-arrow.png') 0px -80px no-repeat; color:rgb(255,255,255);}
