@@ -1091,6 +1091,12 @@ class grocery_Layout extends grocery_Model_Driver
 	
 	protected $css_files				= array();
 	protected $js_files					= array();
+
+	protected $parent_crud = null;
+	protected $child_crud = null;
+	protected $parent_key_field = null;
+	protected $parent_primary_key = 0;
+	protected $title = '';
 	
 	protected function set_basic_Layout()
 	{			
@@ -1104,7 +1110,11 @@ class grocery_Layout extends grocery_Model_Driver
 	protected function showList($ajax = false)
 	{
 		$data = $this->get_common_data();
-		
+	
+		if ($this->get_chain_depth() > 0) {
+			$this->where($this->parent_key_field,$this->parent_primary_key);
+		}
+	
 		$data->order_by 	= $this->order_by;
 		
 		$data->types 		= $this->get_field_types();
@@ -1112,7 +1122,6 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->list = $this->get_list();
 		$data->list = $this->change_list($data->list , $data->types);
 		$data->list = $this->change_list_add_actions($data->list);
-		
 		$data->total_results = $this->get_total_results();
 		
 		$data->columns 				= $this->get_columns();
@@ -1394,11 +1403,19 @@ class grocery_Layout extends grocery_Model_Driver
 
 	public function get_css_files()
 	{
+		if ($this->parent_crud) {
+			// The top level parent supplies all the CSS files, so we dont have to add any more
+			return array();
+		}
 		return $this->css_files;
 	}
 
 	public function get_js_files()
 	{
+		if ($this->parent_crud) {
+			// The top level parent supplies all the JS files, so we dont have to add any more
+			return array();
+		}
 		return $this->js_files;
 	}	
 	
@@ -1831,7 +1848,7 @@ class grocery_Layout extends grocery_Model_Driver
 			return $buffer;
 		}
 		
-		$this->views_as_string .= $buffer;
+		$this->views_as_string .= $this->title . $buffer;
 	}
 	
 	protected function get_views_as_string()
@@ -1840,6 +1857,37 @@ class grocery_Layout extends grocery_Model_Driver
 			return $this->views_as_string;
 		else
 			return null;
+	}
+
+	/**
+	 * 
+	 * Chain this CRUD to a parent CRUD .. it only displays when the parent CRUD is in edit or view record mode
+	 * @param class grocery_CRUD $parent_crud
+	 * @param string $field_name - name of field in this table which is a foreign key to the parent crud primary key
+	 */
+	public function chain_to ($parent_crud, $field_name, $title='') 
+	{
+		if (!is_object($parent_crud) || get_class ($parent_crud) != 'grocery_CRUD') {
+			die ("FATAL ERROR: Parent is not an object of class grocery_CRUD\m");
+		}
+		$this->parent_crud = $parent_crud;
+		$this->parent_key_field = $field_name;
+		$parent_crud->child_crud = $this;
+		$this->title = $title;
+	}
+
+	// Return the depth of chaining. 0 = top level, 1 = first chained crud, 2 = 2nd, etc
+	protected function get_chain_depth() 
+	{
+		$retval = 0;
+		$crud = $this;
+		while (true) {
+			if (!$crud->parent_crud) {
+				return $retval;
+			}
+			$crud = $crud->parent_crud;
+			$retval++;
+		}
 	}
 }
 
@@ -1930,17 +1978,42 @@ class grocery_States extends grocery_Layout
 		
 		$segment_position = count($ci->uri->segments) + 1;
 		$operation = 'list';
-		
 		$segements = $ci->uri->segments;
+		$num_hits = 0;
+		$depth = $this->get_chain_depth();
+		// echo "depth of $this->title = $depth\n";
 		foreach($segements as $num => $value)
 		{
+			// if ($depth > 0) {
+				// echo "check $num $value - hits = $num_hits\n";
+			// }
 			if($value != 'unknown' && in_array($value, $this->states))
 			{
-				$segment_position = (int)$num;
-				$operation = $value; //I don't have a "break" here because I want to ensure that is the LAST segment with name that is in the array.
+				// SteveOC 07-Jan-2012
+				// Break after the Nth occurance of a hit - where N = the depth of this CRUD in a chained heirachy
+				if ($num_hits >= $depth) {
+					$segment_position = (int)$num;
+					$operation = $value; 
+					// J Skoumbouris has comment in original code ...
+					// I don't have a "break" here because I want to ensure that is the LAST segment with name that is in the array.
+					//
+					// Not sure why that is, maybe application specific ?
+					break;
+				}
+				$num_hits++;
 			}
+			$last_value = $value;
 		}
 		
+		// echo "operation = $operation, posn = $segment_position\n";
+
+		if ($depth) {
+			// In ALL cases of a child crud being displayed, the previous segment examined is always the primary key value
+			// to filter on !!
+			$this->parent_primary_key = $last_value; 
+		}
+
+
 		$function_name = $this->get_method_name();
 		
 		if($function_name == 'index' && !in_array('index',$ci->uri->segments))
@@ -1949,6 +2022,7 @@ class grocery_States extends grocery_Layout
 		$first_parameter = !empty($segements[$segment_position+1]) || (!empty($segements[$segment_position+1]) && $segements[$segment_position+1] == 0) ? $segements[$segment_position+1] : false;
 		$second_parameter = !empty($segements[$segment_position+2]) || (!empty($segements[$segment_position+2]) && $segements[$segment_position+2] == 0) ? $segements[$segment_position+2] : false;		
 		
+		// echo "seg pos = $segment_position, op = $operation, param1 = $first_parameter, param2 = $second_parameter\n";
 		return (object)array('segment_position' => $segment_position, 'operation' => $operation, 'first_parameter' => $first_parameter, 'second_parameter' => $second_parameter);
 	}
 	
@@ -2201,7 +2275,7 @@ class grocery_CRUD extends grocery_States
 	private $columns_checked		= false;
 	private $add_fields_checked		= false;
 	private $edit_fields_checked	= false;	
-	
+
 	protected $default_theme		= 'flexigrid';
 	protected $default_theme_path	= 'assets/grocery_crud/themes';
 	protected $default_language_path= 'assets/grocery_crud/languages';
@@ -2817,6 +2891,8 @@ class grocery_CRUD extends grocery_States
 	 */
 	public function render()
 	{
+		$show_child = false;
+
 		$this->_load_language();
 		$this->state_code = $this->getStateCode();
 		
@@ -2882,7 +2958,8 @@ class grocery_CRUD extends grocery_States
 				$state_info = $this->getStateInfo();
 				
 				$this->showViewForm($state_info);
-				
+
+				$show_child = true;
 			break;
 			
 			case 3://edit
@@ -2902,7 +2979,8 @@ class grocery_CRUD extends grocery_States
 				$state_info = $this->getStateInfo();
 				
 				$this->showEditForm($state_info);
-				
+
+				$show_child = true;
 			break;
 
 			case 4://delete
@@ -3018,7 +3096,13 @@ class grocery_CRUD extends grocery_States
 			
 		}
 		
-		return $this->get_layout();
+		$retval = $this->get_layout();
+		if ($show_child && $this->child_crud) {
+			// append the child Crud rendering to this content
+			$child_content = $this->child_crud->render();
+			$retval->output .= $child_content->output;
+		}
+		return $retval;
 	}
 	
 	protected function get_common_data()

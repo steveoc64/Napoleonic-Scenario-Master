@@ -1,6 +1,6 @@
 	<?php 
 if (isset($title)) {
-	echo "<h4>$title</h4>";
+	echo "<h1>$title</h1>";
 }
 echo $output;
 ?>
