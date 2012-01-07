@@ -14,14 +14,6 @@
 
 </head>
 <body>
-<!-- <script src="jquery.js"></script>
-<script>
-     $(document).ready(function(){
-       $("input").click(function(event){
-	       $(this).select();
-       });
-     });
-</script> -->
 <body>
 <div id="menu">
 <ul class="vmenu">
@@ -29,8 +21,8 @@
 // Add in the menu
 $menu = array('Game' => 'game','Scenarios' => 'scenarios','Nations' => 'nations','Units' => 'units','Cards' => 'cards','Data' => 'data','Charts' => 'charts', 'Rules' => 'rules');
 foreach ($menu as $k => $v) {
-	echo "<li><a href=\"/nap/site/$v\" ";
-	if ($v == $this->uri->segment(2)) {
+	echo "<li><a href=\"/nap/$v\" ";
+	if ($v == $this->uri->segment(1)) {
 		echo "class=\"active\" ";
 	}
 	echo "<span>$k</span></a></li>\n";

@@ -6,6 +6,7 @@ body {
 	background-image: url(../images/scenario-master.jpg);
 	background-repeat:repeat-y;
 	background-position: top;
+	background-size: 100%;
 }
 #form {
 	top: 200px;
@@ -40,9 +41,10 @@ body {
 }
 #main {
 	position:absolute;
-	top: 140px;
+	top: 115px;
 	left: 180px;
-	width: 1024px;
+	right: 20px;
+	//width: 80%;
 	background: #888 repeat-x 0 0;
 	opacity:0.9;
 	filter:alpha(opacity=90);
