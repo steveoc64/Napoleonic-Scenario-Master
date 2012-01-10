@@ -1111,8 +1111,10 @@ class grocery_Layout extends grocery_Model_Driver
 	{
 		$data = $this->get_common_data();
 	
-		if ($this->get_chain_depth() > 0) {
+		$data->depth_url = '';
+		if ($depth = $this->get_chain_depth() > 0) {
 			$this->where($this->parent_key_field,$this->parent_primary_key);
+			$data->depth_url = "#crud$depth";
 		}
 	
 		$data->order_by 	= $this->order_by;
@@ -1170,7 +1172,7 @@ class grocery_Layout extends grocery_Model_Driver
 		else
 		{
 			$this->set_echo_and_die();
-			$this->_theme_view('list.php',$data);
+			$this->_theme_view('list.php',$data,false,true);
 		}
 	}
 	
@@ -1255,7 +1257,13 @@ class grocery_Layout extends grocery_Model_Driver
 		
 		$data 				= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
-		
+
+		if ($depth = $this->get_chain_depth()) {
+			$data->depth_url = "#crud$depth";
+		} else {
+			$data->depth_url = '';
+		}
+
 		$data->list_url 		= $this->getListUrl();
 		$data->insert_url		= $this->getInsertUrl();
 		$data->validation_url	= $this->getValidationInsertUrl();
@@ -1274,6 +1282,12 @@ class grocery_Layout extends grocery_Model_Driver
 		$data 				= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
 		
+		if ($depth = $this->get_chain_depth()) {
+			$data->depth_url = "#crud$depth";
+		} else {
+			$data->depth_url = '';
+		}
+
 		$data->field_values = $this->get_edit_values($state_info->primary_key);
 		
 		$data->add_url		= $this->getAddUrl();
@@ -1298,6 +1312,11 @@ class grocery_Layout extends grocery_Model_Driver
 		$data 			= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
 		
+		if ($depth = $this->get_chain_depth()) {
+			$data->depth_url = "#crud$depth";
+		} else {
+			$data->depth_url = '';
+		}
 		$data->field_values = $this->get_edit_values($state_info->primary_key);
 		
 		$data->add_url		= $this->getAddUrl();
@@ -1810,7 +1829,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$this->theme = $theme;
 	}
 	
-	private function _theme_view($view, $vars = array(), $return = FALSE)
+	private function _theme_view($view, $vars = array(), $return = FALSE, $ajax = FALSE)
 	{
 		$vars = (is_object($vars)) ? get_object_vars($vars) : $vars;
 		
@@ -1848,7 +1867,29 @@ class grocery_Layout extends grocery_Model_Driver
 			return $buffer;
 		}
 		
-		$this->views_as_string .= $this->title . $buffer;
+		// Add some anchors on the form to navigate up and down between chained cruds
+		if ($ajax) {
+			$anchor = $title = '';
+		} else {
+			$depth = $this->get_chain_depth();
+			$anchor = "<a name=\"crud$depth\"></a>";
+			if ($depth) {
+				$prev = $depth-1;
+				$prev_title = $this->l('crud_previous').' - '.$this->parent_crud->title;
+				$anchor .= "<a href=\"#crud$prev\" title=\"$prev_title\">&laquo;</a>";
+			}
+			if ($this->child_crud) {
+				$next = $depth+1;
+				$next_title = $this->l('crud_next').' - '.$this->child_crud->title;
+				$anchor .= "<a href=\"#crud$next\" title=\"$next_title\">&raquo;</a>";
+			}
+			$title='';
+			if ($this->title != '') {
+				$header_size = $depth+1;
+				$title = "\n<div id=\"crud_title$depth\"><h$header_size>$this->title</h$header_size></div>\n";
+			}
+		}
+		$this->views_as_string .=  $anchor . $title . $buffer;
 	}
 	
 	protected function get_views_as_string()
@@ -1865,7 +1906,7 @@ class grocery_Layout extends grocery_Model_Driver
 	 * @param class grocery_CRUD $parent_crud
 	 * @param string $field_name - name of field in this table which is a foreign key to the parent crud primary key
 	 */
-	public function chain_to ($parent_crud, $field_name, $title='') 
+	public function chain_to ($parent_crud, $field_name) 
 	{
 		if (!is_object($parent_crud) || get_class ($parent_crud) != 'grocery_CRUD') {
 			die ("FATAL ERROR: Parent is not an object of class grocery_CRUD\m");
@@ -1873,7 +1914,6 @@ class grocery_Layout extends grocery_Model_Driver
 		$this->parent_crud = $parent_crud;
 		$this->parent_key_field = $field_name;
 		$parent_crud->child_crud = $this;
-		$this->title = $title;
 	}
 
 	// Return the depth of chaining. 0 = top level, 1 = first chained crud, 2 = 2nd, etc
@@ -2335,9 +2375,9 @@ class grocery_CRUD extends grocery_States
 	 * 
 	 * @access	public
 	 */
-	public function __construct()
+	public function __construct($title='')
 	{
-
+		$this->title = $title;
 	}	
 	
 	/**

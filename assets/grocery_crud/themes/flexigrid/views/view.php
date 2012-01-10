@@ -17,7 +17,7 @@
 				<?php echo $this->l('form_view'); ?> <?php echo $subject?>
 			</div>
 			<div class='ftitle-right'>
-				<a href='<?php echo $list_url?>' onclick='javascript: return goToList()'><?php echo $this->l('form_back_to_list'); ?></a>
+				<a href='<?php echo "$list_url$depth_url"; ?>' onclick='javascript: return goToList()'><?php echo $this->l('form_back_to_list'); ?></a>
 			</div>
 			<div class='clear'></div>				
 		</div>
@@ -66,7 +66,7 @@
 </div>	
 <script>
 	var validation_url = '<?php echo $validation_url?>';
-	var list_url = '<?php echo $list_url?>';
+	var list_url = '<?php echo "$list_url$depth_url"; ?>';
 
 	var message_alert_edit_form = "<?php echo $this->l('alert_edit_form')?>";
 	var message_update_error = "<?php echo $this->l('update_error')?>";

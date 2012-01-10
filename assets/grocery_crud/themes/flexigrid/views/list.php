@@ -44,9 +44,9 @@
                     	</a>
                     <?php }?>
                     <?php if(!$unset_edit && $row->edit_url){?>
-						<a href='<?php echo $row->edit_url?>' title='<?php echo $this->l('list_edit')?> <?php echo $subject?>'><span class='edit-icon'></span></a>
+						<a href='<?php echo "$row->edit_url$depth_url";?>' title='<?php echo $this->l('list_edit')?> <?php echo $subject?>'><span class='edit-icon'></span></a>
 					<?php }?>
-						<a href='<?php echo $row->view_url?>' title='<?php echo $this->l('list_view')?> <?php echo $subject?>'><span class='view-icon'></span></a>
+						<a href='<?php echo "$row->view_url$depth_url";?>' title='<?php echo $this->l('list_view')?> <?php echo $subject?>'><span class='view-icon'></span></a>
 					<?php 
 					if(!empty($row->action_urls)){
 						foreach($row->action_urls as $action_unique_id => $action_url){ 

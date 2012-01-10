@@ -49,3 +49,6 @@
 	
 	$lang['insert_error']			= 'An error has been occured at the insert.';
 	$lang['update_error']			= 'An error has been occured on Saving.';
+
+	$lang['crud_previous']			= 'Go back to previous form';
+	$lang['crud_next']			= 'Jump forward to next form';
