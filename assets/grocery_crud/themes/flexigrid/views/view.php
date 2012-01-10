@@ -18,6 +18,9 @@
 			</div>
 			<div class='ftitle-right'>
 				<a href='<?php echo "$list_url$depth_url"; ?>' onclick='javascript: return goToList()'><?php echo $this->l('form_back_to_list'); ?></a>
+<?php if ($edit_url != '') { ?>
+				<a href='<?php echo "$edit_url/$primary_key$depth_url"; ?>' onclick='javascript: return goToEdit()'><?php echo $this->l('list_edit'); ?></a>
+<?php } ?>
 			</div>
 			<div class='clear'></div>				
 		</div>
@@ -67,6 +70,9 @@
 <script>
 	var validation_url = '<?php echo $validation_url?>';
 	var list_url = '<?php echo "$list_url$depth_url"; ?>';
+<?php if ($edit_url != '') { ?>
+	var edit_url = '<?php echo "$edit_url$depth_url"; ?>';
+<?php } ?>
 
 	var message_alert_edit_form = "<?php echo $this->l('alert_edit_form')?>";
 	var message_update_error = "<?php echo $this->l('update_error')?>";

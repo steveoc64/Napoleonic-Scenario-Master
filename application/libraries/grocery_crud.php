@@ -1112,7 +1112,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data = $this->get_common_data();
 	
 		$data->depth_url = '';
-		if ($depth = $this->get_chain_depth() > 0) {
+		if ($depth = $this->get_chain_depth()) {
 			$this->where($this->parent_key_field,$this->parent_primary_key);
 			$data->depth_url = "#crud$depth";
 		}
@@ -1277,6 +1277,13 @@ class grocery_Layout extends grocery_Model_Driver
 	
 	protected function showEditForm($state_info)
 	{
+		$can_edit = true;
+		if (isset($this->callback_can_edit)) {
+			$can_edit = call_user_func($this->callback_can_edit,$state_info->primary_key);
+		} 
+		if (!$can_edit) {
+			return $this->showViewForm($state_info);
+		}
 		$this->set_js('assets/grocery_crud/themes/datatables/js/jquery-1.6.2.min.js');
 		
 		$data 				= $this->get_common_data();
@@ -1293,9 +1300,11 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->add_url		= $this->getAddUrl();
 		
 		$data->list_url 	= $this->getListUrl();
+		$data->view_url 	= $this->getViewUrl();
 		$data->update_url	= $this->getUpdateUrl($state_info);
 		$data->delete_url	= $this->getDeleteUrl($state_info);
 		$data->input_fields = $this->get_edit_input_fields($data->field_values);
+		$data->primary_key	= $state_info->primary_key;
 
 		$data->fields 		= $this->get_edit_fields();
 		$data->hidden_fields	= $this->get_edit_hidden_fields();
@@ -1320,6 +1329,17 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->field_values = $this->get_edit_values($state_info->primary_key);
 		
 		$data->add_url		= $this->getAddUrl();
+
+		$can_edit = true;
+		if (isset($this->callback_can_edit)) {
+			$can_edit = call_user_func($this->callback_can_edit,$state_info->primary_key);
+		} 
+		if ($can_edit) {
+			$data->edit_url	= $this->getEditUrl();
+		} else {
+			$data->edit_url	= '';
+		}
+		$data->primary_key	= $state_info->primary_key;
 		
 		$data->list_url 	= $this->getListUrl();
 		$data->input_fields = $this->get_view_display_fields($data->field_values);

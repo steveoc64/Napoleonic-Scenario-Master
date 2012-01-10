@@ -69,3 +69,12 @@ function goToList()
 
 	return false;	
 }
+function goToView()
+{
+	//if( confirm( message_alert_edit_form ) )
+	//{
+		window.location = view_url;
+	//}
+
+	return false;	
+}
