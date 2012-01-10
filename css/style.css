@@ -44,7 +44,6 @@ body {
 	top: 115px;
 	left: 180px;
 	right: 20px;
-	//width: 80%;
 	background: #888 repeat-x 0 0;
 	opacity:0.9;
 	filter:alpha(opacity=90);
@@ -61,7 +60,7 @@ h1,h2,h3,h4,h5 {
 	text-align: center;
 }
 
-input[type=form.text], input[type=password] {
+input[type=form#text], input[type=password] {
 	display: block;
 	margin: 0 0 1em 0;
 	width: 280px;

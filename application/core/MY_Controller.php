@@ -22,14 +22,13 @@ class MY_Controller extends CI_Controller {
 		$this->load->library('grocery_CRUD');	
 	}	
 
-	function render ($title, $contents) {
+	function render ($contents) {
 		if (!is_object($contents)) {
 			$new_contents->output = $contents;
 			$new_contents->css_files = array();
 			$new_contents->js_files = array();
 			$contents = $new_contents;
 		}
-		$contents->title = $title;
 		$this->load->view ('crud_header',$contents);
 		$this->load->view ('crud_body', $contents);
 		$this->load->view ('crud_footer');
@@ -45,14 +44,13 @@ class MY_Controller extends CI_Controller {
 		$this->load->view ('crud_header',$contents);
 	}
 
-	function render_body ($title, $contents) {
+	function render_body ($contents) {
 		if (!is_object($contents)) {
 			$new_contents->output = $contents;
 			$new_contents->css_files = array();
 			$new_contents->js_files = array();
 			$contents = $new_contents;
 		}
-		$contents->title = $title;
 		$this->load->view ('crud_body', $contents);
 	}
 
