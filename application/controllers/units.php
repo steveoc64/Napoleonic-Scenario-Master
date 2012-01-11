@@ -70,9 +70,7 @@ class Units extends MY_Controller
 		$this->render($form->render());
 	}
 	function can_edit_unit ($key) {
-		$q = $this->db->query("select user_id from unit where id='$key'");
-		$row = $q->row();
-		$retval =  ($row->user_id == $this->session->userdata['user_id']);
-		return $retval;
+		$user_id = $this->db->where("id",$key)->get('unit')->row()->user_id;
+		return  ($user_id == $this->session->userdata['user_id']);
 	}
 }

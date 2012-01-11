@@ -32,10 +32,8 @@ class Scenarios extends MY_Controller {
 
 	}
 	function can_edit_scenario ($key) {
-		$q = $this->db->query("select user_id from scenario where id='$key'");
-		$row = $q->row();
-		$retval =  ($row->user_id == $this->session->userdata['user_id']);
-		return $retval;
+		$user_id = $this->db->where("id",$key)->get('scenario')->row()->user_id;
+		return  ($user_id == $this->session->userdata['user_id']);
 	}
 
 }

@@ -108,16 +108,12 @@ class Nations extends MY_Controller
 	}
 
 	function can_edit_nation ($key) {
-		$q = $this->db->query("select user_id from nation where id='$key'");
-		$row = $q->row();
-		$retval =  ($row->user_id == $this->session->userdata['user_id']);
-		return $retval;
+		$user_id = $this->db->where("id",$key)->get('nation')->row()->user_id;
+		return  ($user_id == $this->session->userdata['user_id']);
 	}
 	function can_edit_unit ($key) {
-		$q = $this->db->query("select user_id from unit where id='$key'");
-		$row = $q->row();
-		$retval =  ($row->user_id == $this->session->userdata['user_id']);
-		return $retval;
+		$user_id = $this->db->where("id",$key)->get('unit')->row()->user_id;
+		return  ($user_id == $this->session->userdata['user_id']);
 	}
 
 }
