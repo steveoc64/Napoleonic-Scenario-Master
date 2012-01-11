@@ -18,7 +18,8 @@
 			</div>
 			<div class='ftitle-right'>
 				<a href='<?php echo "$list_url$depth_url";?>' onclick='javascript: return goToList()'><?php echo $this->l('form_back_to_list'); ?></a>
-				<a href='<?php echo "$edit_url$depth_url";?>' onclick='javascript: return goToView()'><?php echo $this->l('list_view'); ?></a>
+				<a href='<?php echo "$view_url/$primary_key$depth_url";?>' onclick='javascript: return goToView()'><?php //echo $this->l('list_view');?><span class='view-icon'></span></a>
+
 			</div>
 			<div class='clear'></div>				
 		</div>

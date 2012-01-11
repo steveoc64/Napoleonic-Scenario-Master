@@ -1114,7 +1114,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->depth_url = '';
 		if ($depth = $this->get_chain_depth()) {
 			$this->where($this->parent_key_field,$this->parent_primary_key);
-			$data->depth_url = "#crud$depth";
+			$data->depth_url = "#form$depth";
 		}
 	
 		$data->order_by 	= $this->order_by;
@@ -1259,15 +1259,15 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->types 		= $this->get_field_types();
 
 		if ($depth = $this->get_chain_depth()) {
-			$data->depth_url = "#crud$depth";
+			$data->depth_url = "#form$depth";
 		} else {
 			$data->depth_url = '';
 		}
 
 		$data->list_url 		= $this->getListUrl();
 		$data->insert_url		= $this->getInsertUrl();
-		$data->validation_url	= $this->getValidationInsertUrl();
-		$data->input_fields 	= $this->get_add_input_fields();
+		$data->validation_url		= $this->getValidationInsertUrl();
+		$data->input_fields 		= $this->get_add_input_fields();
 		
 		$data->fields 			= $this->get_add_fields();
 		$data->hidden_fields	= $this->get_add_hidden_fields();
@@ -1286,11 +1286,11 @@ class grocery_Layout extends grocery_Model_Driver
 		}
 		$this->set_js('assets/grocery_crud/themes/datatables/js/jquery-1.6.2.min.js');
 		
-		$data 				= $this->get_common_data();
+		$data 			= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
 		
 		if ($depth = $this->get_chain_depth()) {
-			$data->depth_url = "#crud$depth";
+			$data->depth_url = "#form$depth";
 		} else {
 			$data->depth_url = '';
 		}
@@ -1303,7 +1303,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->view_url 	= $this->getViewUrl();
 		$data->update_url	= $this->getUpdateUrl($state_info);
 		$data->delete_url	= $this->getDeleteUrl($state_info);
-		$data->input_fields = $this->get_edit_input_fields($data->field_values);
+		$data->input_fields 	= $this->get_edit_input_fields($data->field_values);
 		$data->primary_key	= $state_info->primary_key;
 
 		$data->fields 		= $this->get_edit_fields();
@@ -1322,7 +1322,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->types 		= $this->get_field_types();
 		
 		if ($depth = $this->get_chain_depth()) {
-			$data->depth_url = "#crud$depth";
+			$data->depth_url = "#form$depth";
 		} else {
 			$data->depth_url = '';
 		}
@@ -1892,16 +1892,16 @@ class grocery_Layout extends grocery_Model_Driver
 			$anchor = $title = '';
 		} else {
 			$depth = $this->get_chain_depth();
-			$anchor = "<a name=\"crud$depth\"></a>";
+			$anchor = "<a name=\"form$depth\"></a>";
 			if ($depth) {
 				$prev = $depth-1;
 				$prev_title = $this->l('crud_previous').' - '.$this->parent_crud->title;
-				$anchor .= "<a href=\"#crud$prev\" title=\"$prev_title\">&laquo;</a>";
+				$anchor .= "<a href=\"#form$prev\" title=\"$prev_title\">&laquo;</a>";
 			}
 			if ($this->child_crud) {
 				$next = $depth+1;
 				$next_title = $this->l('crud_next').' - '.$this->child_crud->title;
-				$anchor .= "<a href=\"#crud$next\" title=\"$next_title\">&raquo;</a>";
+				$anchor .= "<a href=\"#form$next\" title=\"$next_title\">&raquo;</a>";
 			}
 			$title='';
 			if ($this->title != '') {
