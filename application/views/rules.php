@@ -1193,7 +1193,7 @@
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
 				  <td align="LEFT" valign="TOP"> 
-					 <p><font size="+3"><a href="#top">«</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="4.1"><font size="+2">4.1 Skirmishers</font></a><br> Skirmish markers
 						represent dispersed light infantrymen and sharpshooters who are deployed to a
 						unit's front and flanks in order to screen against enemy skirmishers and spread
