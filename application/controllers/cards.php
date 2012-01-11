@@ -1,78 +1,45 @@
 <?php
 
-class Units extends MY_Controller 
+class Cards extends MY_Controller 
 {
 	////////////////////////////////////////////////////////////////////////////////
-	//  Unit maintenance
+	//  Cards maintenance
 	function index() {
 
 		// Create basic form
-		$form = new grocery_CRUD('Units of the Napoleonic Wars');
+		$form = new grocery_CRUD('Cards to be played during a Game');
 		$form->set_theme('flexigrid');
-		$form->set_table('unit');
-		$form->set_subject('Unit');
-		$form->where('unit.id > 1');
+		$form->set_table('cards');
+		$form->set_subject('Cards');
 
 		// Fields and Columns
-    		$form->columns('nation_id','year','name','parent_id','unit_type','leader','command_type',
-			'num_bases','troop_grade','skirmishers','skirmish_rating','user_id');
-		$form->fields('nation_id','parent_id','year','name','unit_type','leader','portrait','command_type',
-			'artillery','cavalry','infantry','user_id',
-			'num_bases','troop_grade','skirmishers','skirmish_rating','photo','link','notes');
-		$form->required_fields('name','year');
-		$form->unset_texteditor(array('artillery','cavalry','infantry'));
+    		$form->columns('name','descr','side_id','flag_end_turn','flag_end_active_turn','flag_reinforcement','flag_sticky','user_id');
+    		$form->fields('name','descr','side_id','flag_end_turn','flag_end_active_turn','flag_reinforcement','flag_sticky','user_id');
+		$form->required_fields('name','descr');
 		$form->change_field_type('user_id','invisible');
-		$form->set_field_upload('portrait','content/portraits');
-		$form->set_field_upload('photo','content/units');
+		$form->display_as('side_id','(F)rench<br>(A)llied<br>(E)ither<br>(B)oth');
+		$form->display_as('flag_end_turn','Flag<br>End Turn');
+		$form->display_as('flag_end_active_turn','Flag<br>End Active Turn');
+		$form->display_as('flag_reinforcement','Flag<br>Reinforcement');
+		$form->display_as('flag_sticky','Flag<br>Applies till End of Turn');
+		$form->change_field_type('side_id','enum');
+		$form->change_field_type('flag_end_turn','enum');
+		$form->change_field_type('flag_end_active_turn','enum');
+		$form->change_field_type('flag_reinforcement','enum');
+		$form->change_field_type('flag_sticky','enum');
 
 		// Relations
-		$form->set_relation('nation_id','nation','name'); $form->display_as('nation_id','Nation');
-		$form->set_relation('parent_id','unit',"name"); $form->display_as('parent_id','Parent Formation');
 		$form->set_relation('user_id','user','username'); $form->display_as('user_id','Author');
-		$form->set_relation('command_type','command_types','name'); 
-		$form->set_relation('troop_grade','troop_grades','name'); 
-		$form->set_relation('skirmish_rating','skirmish_rating','name'); 
-		$form->display_as('skirmishers','Sk');
-		$form->display_as('skirmish_rating','Sk Rating');
-		$form->set_relation('unit_type','unit_type','name'); 
 		
 		// Rules
 		$form->callback_before_insert(array($this,'set_post_userid'));
-		$form->callback_can_edit(array($this,'can_edit_unit'));
-		$form->is_link('link');
-
-		///////////////////////////////////////////////////
-		// Chain a list of child units underneath this unit
-		$form2 = new grocery_CRUD('Sub Units of this Unit');
-		$form2->set_theme('flexigrid');
-		$form2->set_table('unit');
-
-		// Fields and Columns
-    		$form2->columns('name','unit_type','leader','command_type',
-			'num_bases','troop_grade','skirmishers','skirmish_rating','user_id');
-		$form2->set_field_upload('portrait','content/portraits');
-		$form2->set_field_upload('photo','content/units');
-		$form2->is_link('link');
-
-		// Relations
-		$form2->set_relation('user_id','user','username'); $form->display_as('user_id','Author');
-		$form2->set_relation('command_type','command_types','name'); 
-		$form2->set_relation('troop_grade','troop_grades','name'); 
-		$form2->set_relation('skirmish_rating','skirmish_rating','name'); 
-		$form2->display_as('skirmishers','Sk');
-		$form2->display_as('skirmish_rating','Sk Rating');
-		$form2->set_relation('unit_type','unit_type','name'); 
-		
-		// Rules
-		$form2->unset_add();
-		$form2->chain_to($form,'parent_id');
+		$form->callback_can_edit(array($this,'can_edit_card'));
 
 		$this->render($form->render());
 	}
-	function can_edit_unit ($key) {
-		$q = $this->db->query("select user_id from unit where id='$key'");
-		$row = $q->row();
-		$retval =  ($row->user_id == $this->session->userdata['user_id']);
-		return $retval;
+
+	function can_edit_card ($key) {
+		$user_id = $this->db->where("id",$key)->get('cards')->row()->user_id;
+		return  ($user_id == $this->session->userdata['user_id']);
 	}
 }
