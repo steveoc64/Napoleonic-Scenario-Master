@@ -14,7 +14,7 @@ class Scenarios extends MY_Controller {
 
 		// Fields and Columns
     		$form->columns('scenario','descr','historical','year','start_time','turn_length','user_id');
-    		$form->fields('scenario','descr','historical','year','start_time','turn_length','overall_map','video_intro','user_id');
+    		$form->fields('scenario','descr','historical','year','start_time','turn_length','nations','overall_map','video_intro','user_id');
 		$form->required_fields('scenario');
 		$form->change_field_type('start_time','datetime');
 		$form->change_field_type('user_id','hidden');
@@ -23,6 +23,7 @@ class Scenarios extends MY_Controller {
 
 		// relations
 		$form->set_relation('user_id','user','username'); $form->display_as('user_id','Author');
+		$form->set_relation_n_n('nations','scenario_nation','nation','scenario_id','nation_id','name');
 
 		// Rules
 		$form->callback_before_insert(array($this,'set_post_userid'));
