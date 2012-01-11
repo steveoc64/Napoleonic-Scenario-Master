@@ -220,6 +220,14 @@ class grocery_Field_Types
 			case 'relation':
 				$field_info->input = $this->get_relation_display($field_info,$value);
 			break;
+			case 'relation_n_n':
+				$_ = '';
+				foreach ($value as $v => $k) {
+					$_ .= "$k<br>";
+				}
+				$field_info->input = $_;
+			break;
+
 			
 			case 'upload_file':
 				$path = $field_info->extras->upload_path;
