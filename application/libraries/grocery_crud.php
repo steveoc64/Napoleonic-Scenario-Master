@@ -28,6 +28,8 @@
  */
 class grocery_Field_Types
 {	
+	public $string_length=50;
+
 	/**	 
 	 * Gets the field types of the main table.
 	 * @return array
@@ -260,10 +262,10 @@ class grocery_Field_Types
 				$value = $this->default_true_false_text[$value];
 			break;
 			case 'string':
-				$value = $this->character_limiter($value,30," [...]");
+				$value = $this->character_limiter($value,$this->string_length," [...]");
 			break;
 			case 'text':
-				$value = $this->character_limiter(strip_tags($value),30," [...]");
+				$value = $this->character_limiter(strip_tags($value),$this->string_length," [...]");
 			break;
 			case 'date':
 				if(!empty($value) && $value != '0000-00-00')
@@ -293,7 +295,7 @@ class grocery_Field_Types
 			break;	
 			case 'relation_n_n':
 				$value = implode(', ' ,$this->get_relation_n_n_selection_array( $value, $this->relation_n_n[$field_info->name] ));
-				$value = $this->character_limiter($value,30," [...]");
+				$value = $this->character_limiter($value,$this->string_length," [...]");
 			break;						
 			
 			case 'password':
@@ -309,7 +311,7 @@ class grocery_Field_Types
 			break;
 			
 			default:
-				$value = $this->character_limiter($value,30," [...]");
+				$value = $this->character_limiter($value,$this->string_length," [...]");
 			break;
 		}
 		
