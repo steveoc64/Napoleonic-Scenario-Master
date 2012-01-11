@@ -50,9 +50,9 @@
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
 				  <td align="LEFT" valign="TOP"> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<font size="+2"><a name="1.0">1.0 Introduction</a></font><br></p> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<font size="+2"><a name="1.1">1.1 Scale</a></font><br> The standard ground
 						scale for Republique is 36 scale meters per 1cm on the game board (27mm equals
 						100 meters). Infantry and cavalry bases represent 550 men each. Artillery bases
@@ -60,7 +60,7 @@
 						still referred to as <i>batteries</i> even though most tactical-level artillery
 						batteries of this period employed fewer guns. Each full turn represents
 						approximately 40 minutes of battle time. </p> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<a name="1.2"><font size="+2">1.2 Equipment</font></a><br> All game play is
 						conducted using ten-sided dice with the number range on the dice representing
 						the numbers one through ten (1 - 10), this means that the <b><i>0</i></b> on
@@ -113,14 +113,14 @@
 					 <center> 
 						<table style="border: 2px solid black;" bgcolor="#F5F5F5" border="0" cellpadding="1" cellspacing="1" width="99%"> 
 						  <tbody><tr> 
-							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF">Gaming Scales <font size="+2">*</font></font></b>&nbsp;</td> 
+							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF">Gaming Scales <font size="+2">&raquo</font></font></b>&nbsp;</td> 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE"><b>6mm</b><br> (18mm = 100 meters)</td> 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE"><b>15mm</b><br> (27mm = 100 meters)</td> 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE"><b>20mm</b><br> (36mm = 100 meters)</td> 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE"><b>25mm</b><br> (54mm = 100 meters)</td> 
 						  </tr> 
 						  <tr> 
-							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF"> Scale Ratios <font size="+2">*</font></font></b>&nbsp;</td> 
+							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF"> Scale Ratios <font size="+2">&raquo</font></font></b>&nbsp;</td> 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE">.66</td>
 							 
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE">1.00</td> 
@@ -128,7 +128,7 @@
 							 <td colspan="2" align="CENTER" bgcolor="#AEA7BE">2.00</td> 
 						  </tr> 
 						  <tr> 
-							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF">Measuring Systems <font size="+2">*</font></font></b>&nbsp;</td> 
+							 <td align="RIGHT" bgcolor="#000000"><b><font color="#FFFFFF">Measuring Systems <font size="+2">&raquo</font></font></b>&nbsp;</td> 
 							 <td align="CENTER" bgcolor="#AEA7BE">Metric (mm)</td> 
 							 <td align="CENTER" bgcolor="#AEA7BE">Imperial
 								(inches)</td> 
@@ -145,71 +145,68 @@
 						  <tr> 
 							 <td>Infantry bases:</td> 
 							 <td align="CENTER">20 x 12</td> 
-							 <td align="CENTER">¾ x ½</td> 
+							 <td align="CENTER">&frac34 x &frac12</td> 
 							 <td align="CENTER">30 x 20</td> 
-							 <td align="CENTER">1<font size="-2">1/8</font> x
-								¾</td> 
+							 <td align="CENTER">1<font size="-2">1/8</font> x &frac34</td> 
 							 <td align="CENTER">40 x 25</td> 
-							 <td align="CENTER">1½ x 1</td> 
+							 <td align="CENTER">1&frac12 x 1</td> 
 							 <td align="CENTER">60 x 40</td> 
-							 <td align="CENTER">2¼ x 1½</td> 
+							 <td align="CENTER">2&frac14 x 1&frac12</td> 
 						  </tr> 
 						  <tr> 
 							 <td bgcolor="#DEDEDE" valign="MIDDLE">Cavalry bases:</td>
 							 
 							 <td align="CENTER" bgcolor="#DEDEDE">25 x 20</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">1 x ¾</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">1 x &frac34</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">40 x 30</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">1½ x 1¼</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">1&frac12 x 1&frac14</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">50 x 40</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">2 x 1½</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">2 x 1&frac12</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">80 x 60</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">3 x 2¼</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">3 x 2&frac14</td> 
 						  </tr> 
 						  <tr> 
 							 <td>Artillery bases:</td> 
 							 <td align="CENTER">20 x 25</td> 
-							 <td align="CENTER">¾ x 1</td> 
+							 <td align="CENTER">&frac34 x 1</td> 
 							 <td align="CENTER">25 x 40</td> 
-							 <td align="CENTER">1 x 1½</td> 
+							 <td align="CENTER">1 x 1&frac12</td> 
 							 <td align="CENTER"> 30 x 50</td> 
-							 <td align="CENTER">1½ x 2</td> 
+							 <td align="CENTER">1&frac12 x 2</td> 
 							 <td align="CENTER">50 x 80</td> 
 							 <td align="CENTER">2 x 3</td> 
 						  </tr> 
 						  <tr> 
 							 <td bgcolor="#DEDEDE">Artillery Limber markers:</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">20 x 20</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">¾ x
-								¾</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">&frac34 x
+								&frac34</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">25 x 25</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">1 x 1</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE"> 30 x 30</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">1½ x
-								1½</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">1&frac12 x
+								1&frac12</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">50 x 50</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">2 x 2</td> 
 						  </tr> 
 						  <tr> 
 							 <td valign="MIDDLE">Leaders:</td> 
 							 <td align="CENTER">12 x 20</td> 
-							 <td align="CENTER">½ x ¾</td> 
+							 <td align="CENTER">&frac12 x &frac34</td> 
 							 <td align="CENTER">25 x 30</td> 
-							 <td align="CENTER"> ¾ x 1<font size="-2">1/8</font></td> 
+							 <td align="CENTER"> &frac34 x 1<font size="-2">1/8</font></td> 
 							 <td align="CENTER"> 25 x 40</td> 
-							 <td align="CENTER">1 x 1½</td> 
+							 <td align="CENTER">1 x 1&frac12</td> 
 							 <td align="CENTER">40 x 60</td> 
-							 <td align="CENTER">1½ x 2¼</td> 
+							 <td align="CENTER">1&frac12 x 2&frac14</td> 
 						  </tr> 
 						  <tr> 
 							 <td bgcolor="#DEDEDE" valign="MIDDLE">Marker bases &amp;
 								skirmishers:</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">20 x 20</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE">½ x
-								½</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE">&frac12 x &frac12</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">20 x 20</td> 
-							 <td align="CENTER" bgcolor="#DEDEDE"> ¾ x
-								¾</td> 
+							 <td align="CENTER" bgcolor="#DEDEDE"> &frac34 x &frac34</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">25 x 25</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">1 x 1</td> 
 							 <td align="CENTER" bgcolor="#DEDEDE">25 x 25</td> 
@@ -257,7 +254,7 @@
 						play. An artillery base with one base hit is considered damaged and should be
 						marked accordingly. Two damaged batteries may not merge to create a single
 						undamaged battery. </p> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<font size="+2"><a name="1.3">1.3 Units</a></font><br> Each unit in Republique
 						is made up of <i>combat bases</i> which &#8211; as a group &#8211; make up its
 						total strength and depict that formation's <i>deployment area</i>. The
@@ -319,7 +316,7 @@
 							 <br> </td> 
 						</tr> 
 					 </tbody></table> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<a name="1.4"><font size="+2">1.4 Formations</font></a><br> Each group of bases
 						representing a unit's deployment area are placed into specific
 						<i>Formations</i>. Available formations include line, column, square and
@@ -371,7 +368,7 @@
 						overseen by an overall commander. For a continuation of these next levels of
 						battlefield organization see the <a href="http://www.wtj.com/games/beta/republique/rules_command.htm" target="">Command</a> section of the rules and the various troops lists posted
 						on the main Republique page.</p> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<font size="+2"><a name="1.5">1.5 The Battlefield</a></font><br> The terrain
 						systems most commonly used for wargaming employ plateau-shaped hill segments in
 						1" and/or ½" thicknesses. For game play, consider the 1" thick hills to
@@ -548,7 +545,7 @@
 						</tr> 
 					 </tbody></table> 
 					 <p><a name="0.8"></a></p> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<a name="1.6"><font size="+2">1.6 Starting a Game</font></a><br> <b>Draw a map
 						of the battle area</b> - Each player must have a battle map, however crude, on
 						which to write their command arrows. The maps may be simple or complex, so long
@@ -612,7 +609,7 @@
 			 </tbody></table> 
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
-				  <td align="LEFT" valign="TOP"><font size="+3"><a href="#0.0">*</a></font> <font size="+2"><a name="2.1">2.1
+				  <td align="LEFT" valign="TOP"><font size="+3"><a href="#0.0">&laquo</a></font> <font size="+2"><a name="2.1">2.1
 					 Command</a></font><br> Republique uses a very simple divisional level command
 					 system. Every infantry regiment, cavalry brigade and artillery battery needs to
 					 have a divisional commander in charge of it, and every divisional commander is
@@ -658,7 +655,7 @@
 					 <i>aid-de-camp</i>, who acts as their divisional commander. Army level
 					 divisions (usually reserve formations) receive <i>game orders</i> from army
 					 commanders in the same manner that member divisions of a corps receive <i>game
-					 orders</i> from their corps commanders.<br> <br> <br> <font size="+3"><a href="#0.0">*</a></font> <a name="2.2"><font size="+2">2.2 Command
+					 orders</i> from their corps commanders.<br> <br> <br> <font size="+3"><a href="#0.0">&laquo</a></font> <a name="2.2"><font size="+2">2.2 Command
 					 Radiuses</font></a><br> All units under the command of a divisional leader must
 					 remain within that officer's <i>command radius</i> (CR), which is measured from
 					 the edge of the commanding leader's base. The command radius represents a zone
@@ -697,7 +694,7 @@
 					 a move or attack order. Leaders attached to regiments continuing assaults may
 					 also leave distant units behind. The units left behind suffer the same
 					 restrictions as units which have retreated from a CR.<br> <br> <br> 
-					 <p><font size="+3"><a href="#0.0">*</a></font>
+					 <p><font size="+3"><a href="#0.0">&laquo</a></font>
 						<a name="2.3"><font size="+2">2.3 Orders</font></a><br> There are two types of
 						orders used to transmit commands during game play: <i>game orders</i> and
 						<i>written orders</i>. Game orders are issued to divisions by their respective
@@ -822,7 +819,7 @@
 						following movement phase, the courier moves toward the leader to whom the
 						message is aimed. At the beginning of the Change Orders segment <i>following
 						the courier's arrival</i>, the message recipient may unfold and read the
-						dispatched message.</p> <br> <br> <font size="+3"><a href="#0.0">*</a></font> <a name="2.4"><font size="+2">2.4
+						dispatched message.</p> <br> <br> <font size="+3"><a href="#0.0">&laquo</a></font> <a name="2.4"><font size="+2">2.4
 					 Leaders</font></a><br> Leader figures can benefit units under their command by
 					 boosting assault performance and by helping units to rally more quickly. In
 					 order to lend their leadership value (if any) to an assault, leaders must be
@@ -873,7 +870,7 @@
 						A national leader will usually be assigned one of the five previous ratings or
 						one of their own, and can give their leader bonus to all units serving on the
 						same side, regardless of nationality or chain of command.</blockquote><br>
-					 <font size="+3"><a href="#0.0">*</a></font><a name="2.5"><font size="+2">2.5 Morale and Rallying</font></a> <br> <b>Morale Conditions</b> -
+					 <font size="+3"><a href="#0.0">&laquo</a></font><a name="2.5"><font size="+2">2.5 Morale and Rallying</font></a> <br> <b>Morale Conditions</b> -
 					 During the game, units can suffer <i>Morale Hits</i> which degrade their
 					 effectiveness and increase the chances that they will attempt to spontaneously
 					 withdraw. The ideal unit condition is <i>formed</i>, which represents a unit
@@ -998,7 +995,7 @@
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
 				  <td align="LEFT" valign="TOP"> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="3.1"><font size="+2">3.1 Movement</font></a><br>Each of the major
 						troop types used for game play have <i>movement allowances</i> which represent
 						the total normal distances they are allowed to move during any one player turn.
@@ -1029,7 +1026,7 @@
 							 of the wheel (i.e. - the longest).</font></td> 
 						</tr> 
 					 </tbody></table> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="3.2"><font size="+2">3.2 Maneuvering</font></a><br> All troops used
 						for game play are considered to be operating under one of the two basic systems
 						of maneuver which were used during this era; the Prussian system and the French
@@ -1075,7 +1072,7 @@
 						sideways at normal movement rates. Changing formation subtracts 5cm from
 						movement. </blockquote> 
 					 <dl> 
-						<dt><font size="+3"><a href="#top">*</a></font>
+						<dt><font size="+3"><a href="#top">&laquo</a></font>
 						  <a name="3.3"><font size="+2">3.3 Forced Movement</font></a><br> Units required
 						  to move according to a game mandated action or result will do so regardless of
 						  their current turn status or movement allowance. These mandatory or "forced"
@@ -1110,7 +1107,7 @@
 						  by subsequent assault rounds which may change the advancing unit's
 						  actions.</dt> 
 						<dt><br> </dt> 
-						<dt><font size="+3"><a href="#top">*</a></font>
+						<dt><font size="+3"><a href="#top">&laquo</a></font>
 						  <a name="3.4"><font size="+2">3.4 Movement Modifiers</font></a></dt> 
 						<dd><b><i>Road Movement</i></b> = All infantry and cavalry
 						  units must be in a road column formation in order to benefit from road
@@ -1135,7 +1132,7 @@
 							 to 15cm from their parent units. Line regiment skirmishers must remain within
 							 8cm of their parent units.</font></td> 
 						</tr> 
-					 </tbody></table> <font size="+3"><a href="#top">*</a></font><a name="3.5"><font size="+2">3.5 Special rules</font></a> <br> <b>Skirmishers</b>
+					 </tbody></table> <font size="+3"><a href="#top">&laquo</a></font><a name="3.5"><font size="+2">3.5 Special rules</font></a> <br> <b>Skirmishers</b>
 					 - Skirmish capable units may deploy their maximum allowance of skirmish markers
 					 at any time during their movement phase (see troop lists for unit skirmish
 					 allowances). Skirmish markers must remain within 8cm of their parent unit for
@@ -1184,7 +1181,7 @@
 					 each turn (i.e. - may not prolong twice during the same movement phase, etc.).
 					 Artillery which prolongs loses simultaneous fire privilege against enemy
 					 artillery and must suffer enemy artillery effects before they fire. <br> <br>
-					 <br> <font size="+3"><a href="#top">*</a></font> <font size="+2"><a name="3.6">3.6 Terrain Effects</a></font><br> Battlefield terrain will
+					 <br> <font size="+3"><a href="#top">&laquo</a></font> <font size="+2"><a name="3.6">3.6 Terrain Effects</a></font><br> Battlefield terrain will
 					 inevitably affect a units ability to move freely around the field of battle.
 					 The <a href="http://www.wtj.com/games/beta/republique/rules_intro.htm#0.5" target="">Battlefield</a> section includes a
 					 list of terrain features and their effects on movement. Units may form their
@@ -1219,7 +1216,7 @@
 						units from which the enemy skirmishers originate. All skirmish fire results
 						take effect at the end of the skirmish fire step, including morale hits scored
 						against artillery batteries.</blockquote> 
-					 <p><font size="+3"><a href=*#top">«</a></font>
+					 <p><font size="+3"><a href=#top">&laquo</a></font>
 						<a name="4.2"><font size="+2">4.2 Artillery Fire</font></a><br> During each
 						Artillery Fire step, artillery batteries for both sides may either fire upon
 						enemy units or announce that they are saving their fire, which will increase
@@ -1263,7 +1260,7 @@
 					 status receives a bonus if involved in primary or incidental assault contact.
 					 Involvement in an assault causes all participating batteries to lose saved fire
 					 status. (See <a href="http://www.wtj.com/games/beta/republique/rules_assault.htm#4.3">Tactical Bonuses</a> in the
-					 Assault section) <br> <br> <font size="+3"><a href="#top">*</a></font><a name="4.3"><font size="+2">4.3 Artillery Fire Point Modifiers:</font></a> <br>
+					 Assault section) <br> <br> <font size="+3"><a href="#top">&laquo</a></font><a name="4.3"><font size="+2">4.3 Artillery Fire Point Modifiers:</font></a> <br>
 					 Fire point modifiers are cumulative and may cancel each other out. 
 					 <ul> 
 						<li><b>Saved Fire</b> - Artillery which successfully
@@ -1305,7 +1302,7 @@
 								frontage and infantry base depth. (drawing not to scale)</td> 
 						  </tr> 
 						</tbody></table> </center> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="4.4"><font size="+2">4.4 Artillery Die Roll Modifiers:</font></a><br>
 						Die roll modifiers are cumulative and may cancel each other out.</p> 
 					 <ul> 
@@ -1360,7 +1357,7 @@
 						  fire onto lower targets and the defensive measure of using hillsides as
 						  shields.</li> 
 					 </ul> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="4.5"><font size="+2">4.5 Targets</font></a><br> <b>Main Targets</b> -
 						Each artillery battery must fire at the unit which is; 1) the <i>closest
 						threat</i>, i.e. - the closest unit occupying the closest artillery range
@@ -1473,7 +1470,7 @@
 							 of unit B. Morale hits carry over into unit B in the same manner as mentioned
 							 in the previous examples.</td> 
 						</tr> 
-					 </tbody></table> <br> <br> <font size="+3"><a href="#top">*</a></font><a name="4.6"><font size="+2">4.6 Leader Injuries
+					 </tbody></table> <br> <br> <font size="+3"><a href="#top">&laquo</a></font><a name="4.6"><font size="+2">4.6 Leader Injuries
 					 and Withdrawal</font></a> <br> Conduct the following steps after all skirmish
 					 and artillery fire for the turn has been resolved. If no leaders were within
 					 8cm of artillery targets, and no morale hits have occurred, ignore this step
@@ -1516,7 +1513,7 @@
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
 				  <td align="LEFT" valign="TOP"> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<font size="+2"><a name="5.1">5.1 Assault Procedure</a></font><br> Hostile
 						units which have approached to within 25mm of each other during movement must
 						now enter into the assault phase. This phase represents the musket volleys,
@@ -1582,7 +1579,7 @@
 								only if both sides agreed. Otherwise, assaults must be broken down into the
 								smallest possible groups. </td> 
 						  </tr> 
-						</tbody></table> </center><br><br> <font size="+3"><a href="#top">*</a></font><a name="5.2"><font size="+2">5.2 Special
+						</tbody></table> </center><br><br> <font size="+3"><a href="#top">&laquo</a></font><a name="5.2"><font size="+2">5.2 Special
 					 Rules</font></a> <br> <b>Local Breakthrough</b> - Attacking units which are
 					 rendered out of primary assault contact with enemy formations due to artillery
 					 or skirmish fire related withdrawals may expend the balance of their remaining
@@ -1698,7 +1695,7 @@
 								contact.</font></td> 
 						  </tr> 
 						</tbody></table> </center> 
-					 <p><font size="+3"><a href="#top">*</a></font><a name="5.3"><font size="+2">5.3 Assault Modifiers</font></a> <br> The following
+					 <p><font size="+3"><a href="#top">&laquo</a></font><a name="5.3"><font size="+2">5.3 Assault Modifiers</font></a> <br> The following
 						modifiers are added or subtracted from the assault roll to complete a modified
 						assault roll. For optional assault rules, see the Assault section of the
 						Optional rules page, which addresses more advanced issues such as <i>assault
@@ -1818,7 +1815,7 @@
 								suffer the worst of the two effects (-4), not both.</td> 
 						  </tr> 
 						</tbody></table> </center> <br> <br> <br> 
-					 <p><font size="+3"><a href="#top">*</a></font><a name="5.4"><font size="+2">5.4 Assault Results</font></a> <br> <b>Hits and
+					 <p><font size="+3"><a href="#top">&laquo</a></font><a name="5.4"><font size="+2">5.4 Assault Results</font></a> <br> <b>Hits and
 						Losses</b> - Both attacking and defending units may suffer morale hits, base
 						hits and panic hits as a result of their primary or incidental involvement in
 						an assault. All results for each round of assault combat are applied
@@ -1944,7 +1941,7 @@
 					 infantry/cavalry force will suffer the combination of the worst possible
 					 effects for the corresponding result line, including morale, panic and base
 					 hits, artillery damage and officer losses. <br><br> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<font size="+2"><a name="5.5">5.5 Emergency Rally</a></font><br> Upon losing
 						any assault, the commander of the losing side may use local unattached officer
 						figures to attempt an <i>emergency rally</i> of units which lost the just-ended
@@ -1971,7 +1968,7 @@
 					 <p><b>Complete Rally</b> - In the event that all the units in a
 						division successfully rally, all panic hits in that division are
 						eliminated.</p> 
-					 <p><font size="+3"><a href="#top">*</a></font>
+					 <p><font size="+3"><a href="#top">&laquo</a></font>
 						<a name="5.6"><font size="+2">5.6 Injury and Disorder</font></a><br> <b>Leader
 						Injuries</b> - Roll 1D10 for each leader who was within 8cm of any unit
 						involved in an assault during the current Assault Phase. Leaders who have
@@ -1992,7 +1989,7 @@
 			 </tbody></table> 
 			 <table bgcolor="#FFFFFF" border="0" cellpadding="10" cellspacing="0" width="95%"> 
 				<tbody><tr> 
-				  <td align="LEFT" valign="TOP"><font size="+3"><a href="#top">*</a></font> <a name="6.1"><font size="+2">6.1 Panic Test
+				  <td align="LEFT" valign="TOP"><font size="+3"><a href="#top">&laquo</a></font> <a name="6.1"><font size="+2">6.1 Panic Test
 					 Procedure</font></a><br> Panic tests are conducted at the end of a turn by any
 					 divisions which have suffered traumatic events during the course of the turn
 					 sequence. These panic tests use the same chart as the panic hits which occur
@@ -2017,7 +2014,7 @@
 					 division. Deserted bases are removed from game play and not returned unless
 					 playing multiple-day scenarios. Once all panic test rounds have been resolved,
 					 all panic markers are removed from affected divisions and the next turn is
-					 begun.<br> <br> <br> <br> <font size="+3"><a href="#top">*</a></font>
+					 begun.<br> <br> <br> <br> <font size="+3"><a href="#top">&laquo</a></font>
 					 <a name="6.2"><font size="+2">6.2 When to Test</font></a><br> There are three
 					 different conditions which can trigger divisional panic tests. If more than one
 					 condition happens to a division, it will simultaneously roll one die for each
@@ -2051,7 +2048,7 @@
 					 test, the subject division must then roll an <i>adjoining panic</i> test. If
 					 however, it passes that panic test only to have yet another adjoining division
 					 fail during the same round (or any subsequent round of that phase), it will not
-					 have to roll a second adjoining panic test.<br> <br> <br> <font size="+3"><a href="#top">*</a></font> <a name="6.3"><font size="+2">6.3 Panic
+					 have to roll a second adjoining panic test.<br> <br> <br> <font size="+3"><a href="#top">&laquo</a></font> <a name="6.3"><font size="+2">6.3 Panic
 					 Modifiers</font></a><br> <a name="pmods"></a><b>Panic Level Modifiers:</b> The
 					 following modifiers increase or decrease the panic levels of the testing
 					 divisions. For example; moving up one panic level will cause a player already
