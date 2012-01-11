@@ -19,7 +19,7 @@
 			<div class='ftitle-right'>
 				<a href='<?php echo "$list_url$depth_url"; ?>' onclick='javascript: return goToList()'><?php echo $this->l('form_back_to_list'); ?></a>
 <?php if ($edit_url != '') { ?>
-				<a href='<?php echo "$edit_url/$primary_key$depth_url"; ?>' onclick='javascript: return goToEdit()'><?php echo $this->l('list_edit'); ?></a>
+				<a href='<?php echo "$edit_url/$primary_key$depth_url"; ?>' onclick='javascript: return goToEdit()'><?php //echo $this->l('list_edit'); ?><span class='edit-icon'></span></a>
 <?php } ?>
 			</div>
 			<div class='clear'></div>				
