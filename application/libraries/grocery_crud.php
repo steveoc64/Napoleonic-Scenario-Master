@@ -631,7 +631,12 @@ class grocery_Model_Driver extends grocery_Field_Types
 	protected function form_validation()
 	{
 		if($this->form_validation === null)
+		{
 			$this->form_validation = new grocery_Form_validation();
+			$ci = &get_instance();
+			$ci->load->library('form_validation');
+			$ci->form_validation = $this->form_validation;
+		}
 		return $this->form_validation;
 	}
 	
@@ -1320,7 +1325,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->fields 		= $this->get_edit_fields();
 		$data->hidden_fields	= $this->get_edit_hidden_fields();
 		
-		$data->validation_url	= $this->getValidationUpdateUrl(); 
+		$data->validation_url	= $this->getValidationUpdateUrl($state_info->primary_key); 
 		
 		$this->_theme_view('edit.php',$data);
 	}
@@ -2099,13 +2104,19 @@ class grocery_States extends grocery_Layout
 	
 	protected function get_method_hash()
 	{
-		return md5($this->get_method_name());
+		return md5($this->get_controller_name().$this->get_method_name());
 	}
 	
 	protected function get_method_name()
 	{
 		$ci = &get_instance();		
 		return $ci->router->method;
+	}
+
+	protected function get_controller_name()
+	{
+		$ci = &get_instance();
+		return $ci->router->class;
 	}
 	
 	public function getState()
@@ -2143,9 +2154,12 @@ class grocery_States extends grocery_Layout
 		return $this->state_url('insert_validation');
 	}
 	
-	protected function getValidationUpdateUrl()
+	protected function getValidationUpdateUrl($primary_key = null)
 	{
-		return $this->state_url('update_validation');
+		if ($primary_key === null)
+			return $this->state_url('update_validation');
+		else
+			return $this->state_url('update_validation/'.$primary_key);
 	}	
 
 	protected function getEditUrl($primary_key = null)
@@ -2925,7 +2939,7 @@ class grocery_CRUD extends grocery_States
 		}
 		return $this->edit_fields;
 	}		
-		
+	
 	public function order_by($order_by, $direction = '')
 	{
 		if($direction == '')
@@ -3507,6 +3521,7 @@ class grocery_CRUD extends grocery_States
 	 * @param string $field_name
 	 * @param string $related_table
 	 * @param string $related_title_field
+	 * @param string $link
 	 */
 	public function set_relation($field_name , $related_table, $related_title_field, $link=null)
 	{

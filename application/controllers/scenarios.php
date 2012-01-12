@@ -29,6 +29,27 @@ class Scenarios extends MY_Controller {
 		$form->callback_before_insert(array($this,'set_post_userid'));
 		$form->callback_can_edit(array($this,'can_edit_scenario'));
 		
+		///////////////////////////////////////////
+		// Edit Nations used in this scenario
+		$form2 = new grocery_CRUD('Details on Nations in this Scenario');
+		$form2->set_theme('flexigrid');
+		$form2->set_table('scenario_nation');
+		$form2->set_subject('Scenario Data');
+
+		// Fields and Columns
+    		$form2->columns('nation_id','blinds','primes','rallies','player_briefing','player_map');
+		$form2->set_field_upload('player_map','content/maps');
+		$form->change_field_type('scenario_id','invisible');
+
+		// relations
+		$form2->set_relation('nation_id','nation','name'); $form->display_as('nation_id','Nation');
+		$form2->unset_delete();
+		$form2->unset_view();
+
+		// Rules
+		//$form2->callback_can_edit(array($this,'can_edit_scenario_nation'));
+		$form2->chain_to($form,'scenario_id');
+	
 		$this->render($form->render());
 
 	}
