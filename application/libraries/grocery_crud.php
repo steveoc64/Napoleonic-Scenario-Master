@@ -1151,6 +1151,7 @@ class grocery_Layout extends grocery_Model_Driver
 		$data->unset_add			= $this->unset_add;
 		$data->unset_edit			= $this->unset_edit;
 		$data->unset_delete			= $this->unset_delete;
+		$data->unset_view			= $this->unset_view;
 		
 		if($data->list === false)
 		{
@@ -2382,6 +2383,7 @@ class grocery_CRUD extends grocery_States
 	protected $unset_add		= false;
 	protected $unset_edit		= false;
 	protected $unset_delete		= false;
+	protected $unset_view		= false;
 	protected $unset_jquery		= false;
 	
 	/* Callbacks */
@@ -2565,6 +2567,11 @@ class grocery_CRUD extends grocery_States
 		$this->unset_delete = true;
 		
 		return $this;
+	}
+
+	public function unset_view()
+	{
+		$this->unset_view = true;
 	}
 	
 	/**
