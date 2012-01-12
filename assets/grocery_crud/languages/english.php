@@ -22,7 +22,7 @@
 
 	$lang['form_edit'] 				= 'Edit';
 	$lang['form_view'] 				= 'View';
-	$lang['form_back_to_list'] 		= '&laquo; Back to List';
+	$lang['form_back_to_list'] 		= 'Back to List';
 	$lang['form_update_changes'] 	= 'Update changes';
 	$lang['form_cancel'] 			= 'Cancel';	
 	$lang['form_update_loading'] 	= 'Loading, updating changes...';
